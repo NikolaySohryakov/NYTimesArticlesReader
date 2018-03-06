@@ -3,20 +3,28 @@
 //
 
 import Foundation
+import RxSwift
 import Moya
 
 protocol ArticlesSearchServiceType {
-    var token: String { get }
+    func observeAllArticles() -> Single<[ArticleType]>
 }
 
 struct ArticlesSearchService: ArticlesSearchServiceType {
     private(set) var token: String
 
-    fileprivate lazy var provider = {
-        return MoyaProvider<NYTimesArticleSearch>(plugins: [NYTimesArticleSearchAuthPlugin(token: token)])
-    }()
+    fileprivate var provider: MoyaProvider<NYTimesArticleSearch>
 
     init(token: String) {
         self.token = token
+        self.provider = MoyaProvider<NYTimesArticleSearch>(plugins: [NYTimesArticleSearchAuthPlugin(token: token)])
+    }
+
+    func observeAllArticles() -> Single<[ArticleType]> {
+        return provider.rx
+                .request(.articleSearch)
+                .filterSuccessfulStatusCodes()
+                .map([ArticleType].self, atKeyPath:"response.docs", using: JSONDecoder())
+                .catchError { _ in Single.just([]) }
     }
 }

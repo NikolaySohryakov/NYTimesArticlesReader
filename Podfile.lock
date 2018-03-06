@@ -3,6 +3,7 @@ PODS:
     - RxCocoa (~> 4.0)
     - RxSwift (~> 4.0)
   - Alamofire (4.6.0)
+  - Differentiator (3.0.2)
   - Moya/Core (11.0.0):
     - Alamofire (~> 4.1)
     - Result (~> 3.0)
@@ -19,6 +20,10 @@ PODS:
     - RxSwift (~> 4.0)
   - RxCocoa (4.1.2):
     - RxSwift (~> 4.0)
+  - RxDataSources (3.0.2):
+    - Differentiator (~> 3.0)
+    - RxCocoa (~> 4.0)
+    - RxSwift (~> 4.0)
   - RxKeyboard (0.8.1):
     - RxCocoa (>= 4.0.0)
     - RxSwift (>= 4.0.0)
@@ -33,6 +38,7 @@ DEPENDENCIES:
   - R.swift
   - RxBlocking (~> 4.0)
   - RxCocoa (~> 4.0)
+  - RxDataSources (~> 3.0)
   - RxKeyboard
   - RxSwift (~> 4.0)
   - RxTest (~> 4.0)
@@ -40,6 +46,7 @@ DEPENDENCIES:
 SPEC CHECKSUMS:
   Action: d60087ebce41b969d1afdad01e2fa1372a82f26e
   Alamofire: f41a599bd63041760b26d393ec1069d9d7b917f4
+  Differentiator: a87be69eba49ec4ab460c7671143ee3a9eececfd
   Moya: be29766339783963a70d1279d69c891ab3a1393c
   NSObject+Rx: cbbc05e3cb3ad446cdbced3e00e39c9efaf02925
   R.swift: d6a5ec2f55a8441dc0ed9f1f8b37d7d11ae85c66
@@ -47,10 +54,11 @@ SPEC CHECKSUMS:
   Result: d2d07204ce72856f1fd9130bbe42c35a7b0fea10
   RxBlocking: f6054985901412fc8c02daa84e92d4ba68c61389
   RxCocoa: d88ba0f1f6abf040011a9eb4b539324fc426843a
+  RxDataSources: cb7c31e652a87ebb919da45f716bbb87b3765f6b
   RxKeyboard: 28d984440671becc75350b1dfae7ae08d31076df
   RxSwift: e49536837d9901277638493ea537394d4b55f570
   RxTest: e634f15fd2c2cd0e0120132ef7a4f7be69ad0393
 
-PODFILE CHECKSUM: d2198ab9154d735eeaf6fda83f30ed464d8578ae
+PODFILE CHECKSUM: 7d1ca132cbd2e8f1a13c48444911a12e314a90f3
 
 COCOAPODS: 1.4.0

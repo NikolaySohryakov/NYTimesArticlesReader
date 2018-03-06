@@ -8,6 +8,7 @@ pod 'Moya/RxSwift', '~> 11.0'
 
 target 'NetworkingExample' do
     pod 'RxCocoa',    '~> 4.0'
+    pod 'RxDataSources', '~> 3.0'
     pod 'R.swift'
     pod 'RxKeyboard'
 end

@@ -19,7 +19,11 @@ final class NYTimesArticleSearchAuthPlugin: PluginType {
         }
 
         var request = request
-        urlComponents.queryItems?.append(URLQueryItem(name: "api-key", value: token))
+        var queryItems = urlComponents.queryItems ?? []
+
+        queryItems.append(URLQueryItem(name: "api-key", value: token))
+
+        urlComponents.queryItems = queryItems
 
         request.url = urlComponents.url
 

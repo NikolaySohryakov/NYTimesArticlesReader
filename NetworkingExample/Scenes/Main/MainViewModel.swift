@@ -6,6 +6,7 @@ import Foundation
 import RxSwift
 import Action
 
+typealias ArticleType = Article
 
 protocol MainViewModelInputsType {
     // Mainly `PublishSubject` here
@@ -13,6 +14,7 @@ protocol MainViewModelInputsType {
 
 protocol MainViewModelOutputsType {
     // Mainly `Observable` here
+    var data: Observable<[Article]> { get }
 }
 
 protocol MainViewModelActionsType {
@@ -24,7 +26,6 @@ protocol MainViewModelType {
     var outputs: MainViewModelOutputsType { get }
     var actions: MainViewModelActionsType { get }
 }
-
 
 class MainViewModel: MainViewModelType {
     var inputs:  MainViewModelInputsType  { return self }
@@ -38,7 +39,9 @@ class MainViewModel: MainViewModelType {
     // MARK: Inputs
     
     // MARK: Outputs
-    
+    private(set) var data: Observable<[ArticleType]>
+
+    // MARK: ViewModel Life Cycle
     init(coordinator: SceneCoordinatorType, service: ArticlesSearchServiceType) {
         // Setup
         self.coordinator = coordinator
@@ -47,6 +50,7 @@ class MainViewModel: MainViewModelType {
         // Inputs
         
         // Outputs
+        data = service.observeAllArticles().asObservable()
         
         // ViewModel Life Cycle
     }
