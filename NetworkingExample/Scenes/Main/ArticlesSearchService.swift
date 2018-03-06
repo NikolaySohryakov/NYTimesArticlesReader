@@ -7,7 +7,7 @@ import RxSwift
 import Moya
 
 protocol ArticlesSearchServiceType {
-    func observeAllArticles() -> Single<[ArticleType]>
+    func observeAllArticles() -> Single<([ArticleType], Int)>
 }
 
 struct ArticlesSearchService: ArticlesSearchServiceType {
@@ -20,11 +20,18 @@ struct ArticlesSearchService: ArticlesSearchServiceType {
         self.provider = MoyaProvider<NYTimesArticleSearch>(plugins: [NYTimesArticleSearchAuthPlugin(token: token)])
     }
 
-    func observeAllArticles() -> Single<[ArticleType]> {
+    func observeAllArticles() -> Single<([ArticleType], Int)> {
         return provider.rx
                 .request(.articleSearch)
                 .filterSuccessfulStatusCodes()
-                .map([ArticleType].self, atKeyPath:"response.docs", using: JSONDecoder())
-                .catchError { _ in Single.just([]) }
+                .flatMap {response in
+                    let decoder = JSONDecoder()
+
+                    let articles = try? response.map([ArticleType].self, atKeyPath: "response.docs", using: decoder, failsOnEmptyData: false)
+                    let hits = try? response.map(Int.self, atKeyPath: "response.meta.hits", using: decoder, failsOnEmptyData: false)
+
+                    return Single.just((articles ?? [], hits ?? 0))
+                }
+                .catchError { _ in return Single.just(([], 0)) }
     }
 }
