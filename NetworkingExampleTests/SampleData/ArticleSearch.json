@@ -1,0 +1,316 @@
+{
+    "status": "OK",
+    "copyright": "Copyright (c) 2018 The New York Times Company. All Rights Reserved.",
+    "response": {
+        "docs": [
+                 {
+                 "web_url": "https://www.nytimes.com/reuters/2018/03/06/sports/06reuters-chess-banks.html",
+                 "snippet": "The World Chess Federation (FIDE) says its Swiss bank announced that the federation's accounts would be immediately frozen because its president - with whom the FIDE secretariat is embroiled in a power struggle - is under U.S. sanctions for allege...",
+                 "blog": {},
+                 "source": "Reuters",
+                 "multimedia": [],
+                 "headline": {
+                 "main": "World Chess Federation Says Swiss Accounts to Be Frozen Over Syria Sanctions",
+                 "kicker": null,
+                 "content_kicker": null,
+                 "print_headline": "World Chess Federation Says Swiss Accounts to Be Frozen Over Syria Sanctions",
+                 "name": null,
+                 "seo": null,
+                 "sub": null
+                 },
+                 "keywords": [],
+                 "pub_date": "2018-03-06T12:24:53+0000",
+                 "document_type": "article",
+                 "new_desk": "None",
+                 "byline": {
+                 "original": "By REUTERS",
+                 "person": [],
+                 "organization": "REUTERS"
+                 },
+                 "type_of_material": "News",
+                 "_id": "5a9e88a1410cf7000162f16e",
+                 "word_count": 367,
+                 "score": 1,
+                 "uri": "nyt://article/7e2ac83c-dba3-5b6b-a96b-8fbc78564a94"
+                 },
+                 {
+                 "web_url": "https://www.nytimes.com/reuters/2018/03/06/business/06reuters-britain-eu-guidelines.html",
+                 "snippet": "The chairman of European Union leaders Donald Tusk will present on Wednesday draft guidelines on what the bloc would like to see in a trade agreement with Britain after the country leaves in 2019, his spokesman said.",
+                 "blog": {},
+                 "source": "Reuters",
+                 "multimedia": [],
+                 "headline": {
+                 "main": "EU's Tusk to Present Draft for Trade Deal With Britain on Wednesday",
+                 "kicker": null,
+                 "content_kicker": null,
+                 "print_headline": "EU's Tusk to Present Draft for Trade Deal With Britain on Wednesday",
+                 "name": null,
+                 "seo": null,
+                 "sub": null
+                 },
+                 "keywords": [],
+                 "pub_date": "2018-03-06T12:24:44+0000",
+                 "document_type": "article",
+                 "new_desk": "None",
+                 "byline": {
+                 "original": "By REUTERS",
+                 "person": [],
+                 "organization": "REUTERS"
+                 },
+                 "type_of_material": "News",
+                 "_id": "5a9e889647de81a90120abf6",
+                 "word_count": 147,
+                 "score": 1,
+                 "uri": "nyt://article/0fdfd5e7-b76c-5c24-9514-73e1ad27c824"
+                 },
+                 {
+                 "web_url": "https://www.nytimes.com/aponline/2018/03/06/us/ap-us-virginia-dad-bully-son.html",
+                 "snippet": "A father in Virginia who said his son was kicked off the bus for three days for bullying made him run to school instead. In the rain.",
+                 "blog": {},
+                 "source": "AP",
+                 "multimedia": [],
+                 "headline": {
+                 "main": "Man Forces Son to Run to School in the Rain for Bullying",
+                 "kicker": null,
+                 "content_kicker": null,
+                 "print_headline": "Man Forces Son to Run to School in the Rain for Bullying",
+                 "name": null,
+                 "seo": null,
+                 "sub": null
+                 },
+                 "keywords": [],
+                 "pub_date": "2018-03-06T12:24:37+0000",
+                 "document_type": "article",
+                 "new_desk": "None",
+                 "byline": {
+                 "original": "By THE ASSOCIATED PRESS",
+                 "person": [],
+                 "organization": "THE ASSOCIATED PRESS"
+                 },
+                 "type_of_material": "News",
+                 "_id": "5a9e888e410cf7000162f16d",
+                 "word_count": 133,
+                 "score": 1,
+                 "uri": "nyt://article/fbd99626-dba7-57ed-8fde-c24ddec228e7"
+                 },
+                 {
+                 "web_url": "https://www.nytimes.com/aponline/2018/03/06/world/europe/ap-syria-un.html",
+                 "snippet": "U.N. war crimes investigators said Tuesday that a Russian plane was apparently behind an airstrike in November in Syria's Idlib province that killed 84 people at a marketplace, an attack which could amount to a war crime.",
+                 "blog": {},
+                 "source": "AP",
+                 "multimedia": [],
+                 "headline": {
+                 "main": "UN Probe: Russia Behind Deadly Airstrike in Syria's Idlib",
+                 "kicker": null,
+                 "content_kicker": null,
+                 "print_headline": "UN Probe: Russia Behind Deadly Airstrike in Syria's Idlib",
+                 "name": null,
+                 "seo": null,
+                 "sub": null
+                 },
+                 "keywords": [],
+                 "pub_date": "2018-03-06T12:21:42+0000",
+                 "document_type": "article",
+                 "new_desk": "None",
+                 "section_name": "Europe",
+                 "byline": {
+                 "original": "By THE ASSOCIATED PRESS",
+                 "person": [],
+                 "organization": "THE ASSOCIATED PRESS"
+                 },
+                 "type_of_material": "News",
+                 "_id": "5a9e87e247de81a90120abf4",
+                 "word_count": 563,
+                 "score": 1,
+                 "uri": "nyt://article/3636e3c8-5f8a-536b-a191-355ff816cf7a"
+                 },
+                 {
+                 "web_url": "https://www.nytimes.com/2018/03/06/learning/06WODLN.html",
+                 "snippet": "This word has appeared in 251 articles on nytimes.com in the past year.",
+                 "blog": {},
+                 "source": "The New York Times",
+                 "multimedia": [],
+                 "headline": {
+                 "main": "Word + Quiz: audacious",
+                 "kicker": "Word of the Day",
+                 "content_kicker": "Word of the Day",
+                 "print_headline": "Word + Quiz: audacious",
+                 "name": null,
+                 "seo": null,
+                 "sub": null
+                 },
+                 "keywords": [],
+                 "pub_date": "2018-03-06T12:20:51+0000",
+                 "document_type": "article",
+                 "new_desk": "Learning",
+                 "byline": {
+                 "original": "By THE LEARNING NETWORK",
+                 "person": [],
+                 "organization": "THE LEARNING NETWORK"
+                 },
+                 "type_of_material": "News",
+                 "_id": "5a9e87ac47de81a90120abf3",
+                 "word_count": 180,
+                 "score": 1,
+                 "uri": "nyt://article/ac7c23d3-07b4-557a-8cb5-9ebd99b3a925"
+                 },
+                 {
+                 "web_url": "https://www.nytimes.com/reuters/2018/03/06/world/asia/06reuters-afghanistan-comedian.html",
+                 "snippet": "A video showing a well-known Afghan comedian, apparently under the influence of drink or drugs and being vilified by men, at least one in military-style uniform, has sparked outrage about what appeared to be a bid to shame a critic of the powerful...",
+                 "blog": {},
+                 "source": "Reuters",
+                 "multimedia": [],
+                 "headline": {
+                 "main": "Outrage at Apparent Bid to Shame Popular Afghan Comedian",
+                 "kicker": null,
+                 "content_kicker": null,
+                 "print_headline": "Outrage at Apparent Bid to Shame Popular Afghan Comedian",
+                 "name": null,
+                 "seo": null,
+                 "sub": null
+                 },
+                 "keywords": [],
+                 "pub_date": "2018-03-06T12:15:48+0000",
+                 "document_type": "article",
+                 "new_desk": "None",
+                 "section_name": "Asia Pacific",
+                 "byline": {
+                 "original": "By REUTERS",
+                 "person": [],
+                 "organization": "REUTERS"
+                 },
+                 "type_of_material": "News",
+                 "_id": "5a9e867d47de81a90120abf1",
+                 "word_count": 406,
+                 "score": 1,
+                 "uri": "nyt://article/3adc3426-32d9-52ad-a26d-2b1c04531f1c"
+                 },
+                 {
+                 "web_url": "https://www.nytimes.com/aponline/2018/03/06/world/europe/ap-eu-russia-spy-swap.html",
+                 "snippet": "Sergei Skripal, a former Russian spy who fell critically ill in Britain on Monday after exposure to an \"unknown substance\", was one of four prisoners who were pardoned and released from custody in 2010 as part of a spy swap, which followed the exp...",
+                 "blog": {},
+                 "source": "AP",
+                 "multimedia": [],
+                 "headline": {
+                 "main": "Spy Swap: A Look at the 4 Russians Freed in 2010 Exchange",
+                 "kicker": null,
+                 "content_kicker": null,
+                 "print_headline": "Spy Swap: A Look at the 4 Russians Freed in 2010 Exchange",
+                 "name": null,
+                 "seo": null,
+                 "sub": null
+                 },
+                 "keywords": [],
+                 "pub_date": "2018-03-06T12:15:44+0000",
+                 "document_type": "article",
+                 "new_desk": "None",
+                 "section_name": "Europe",
+                 "byline": {
+                 "original": "By THE ASSOCIATED PRESS",
+                 "person": [],
+                 "organization": "THE ASSOCIATED PRESS"
+                 },
+                 "type_of_material": "News",
+                 "_id": "5a9e867947de81a90120abf0",
+                 "word_count": 641,
+                 "score": 1,
+                 "uri": "nyt://article/9c67a2ba-df9f-5af7-89a9-bb80097ec78b"
+                 },
+                 {
+                 "web_url": "https://www.nytimes.com/reuters/2018/03/06/business/06reuters-usa-stocks.html",
+                 "snippet": "U.S. stock futures pointed to a sharply higher opening on Tuesday after South Korea said it would hold its first summit in more than a decade with North Korea and that the latter was open to talks with the United States on denuclearization. ",
+                 "blog": {},
+                 "source": "Reuters",
+                 "multimedia": [],
+                 "headline": {
+                 "main": "Stock Futures Higher on Signs North Korea Open to Talks",
+                 "kicker": null,
+                 "content_kicker": null,
+                 "print_headline": "Stock Futures Higher on Signs North Korea Open to Talks",
+                 "name": null,
+                 "seo": null,
+                 "sub": null
+                 },
+                 "keywords": [],
+                 "pub_date": "2018-03-06T12:15:40+0000",
+                 "document_type": "article",
+                 "new_desk": "None",
+                 "byline": {
+                 "original": "By REUTERS",
+                 "person": [],
+                 "organization": "REUTERS"
+                 },
+                 "type_of_material": "News",
+                 "_id": "5a9e867447de81a90120abef",
+                 "word_count": 124,
+                 "score": 1,
+                 "uri": "nyt://article/292e4618-c21d-51c8-b68a-45c1a81f5f03"
+                 },
+                 {
+                 "web_url": "https://www.nytimes.com/reuters/2018/03/06/business/06reuters-engie-strategy.html",
+                 "snippet": "French power utility Engie is looking at big acquisitions that will generate cash, in a strategy switch following the sale of 15 billion euros (13.37 billion pounds) of assets that have shrunk its earnings base, according to two sources close to t...",
+                 "blog": {},
+                 "source": "Reuters",
+                 "multimedia": [],
+                 "headline": {
+                 "main": "Shrinking Gas Giant Engie Eyes Deals to Stem Earnings Loss",
+                 "kicker": null,
+                 "content_kicker": null,
+                 "print_headline": "Shrinking Gas Giant Engie Eyes Deals to Stem Earnings Loss",
+                 "name": null,
+                 "seo": null,
+                 "sub": null
+                 },
+                 "keywords": [],
+                 "pub_date": "2018-03-06T12:12:58+0000",
+                 "document_type": "article",
+                 "new_desk": "None",
+                 "byline": {
+                 "original": "By REUTERS",
+                 "person": [],
+                 "organization": "REUTERS"
+                 },
+                 "type_of_material": "News",
+                 "_id": "5a9e85d147de81a90120abeb",
+                 "word_count": 592,
+                 "score": 1,
+                 "uri": "nyt://article/0bf3056a-7a86-5215-8b28-bc583a2daf19"
+                 },
+                 {
+                 "web_url": "https://www.nytimes.com/reuters/2018/03/06/business/06reuters-usa-trade-steel-oecd.html",
+                 "snippet": "Excess steel capacity should be dealt with in a global forum for the problem to avoid an escalation of trade disputes, OECD chief Angel Gurria said on Tuesday following the Trump administration's plans to introduce import tariffs.",
+                 "blog": {},
+                 "source": "Reuters",
+                 "multimedia": [],
+                 "headline": {
+                 "main": "Deal With Excess Steel Capacity in Global Forum, OECD Says",
+                 "kicker": null,
+                 "content_kicker": null,
+                 "print_headline": "Deal With Excess Steel Capacity in Global Forum, OECD Says",
+                 "name": null,
+                 "seo": null,
+                 "sub": null
+                 },
+                 "keywords": [],
+                 "pub_date": "2018-03-06T12:12:42+0000",
+                 "document_type": "article",
+                 "new_desk": "None",
+                 "byline": {
+                 "original": "By REUTERS",
+                 "person": [],
+                 "organization": "REUTERS"
+                 },
+                 "type_of_material": "News",
+                 "_id": "5a9e85c347de81a90120abe7",
+                 "word_count": 151,
+                 "score": 1,
+                 "uri": "nyt://article/93e19683-0d4a-59e8-ba0a-62e4ca182c77"
+                 }
+                 ],
+        "meta": {
+            "hits": 15410506,
+            "offset": 0,
+            "time": 349
+        }
+    }
+}
