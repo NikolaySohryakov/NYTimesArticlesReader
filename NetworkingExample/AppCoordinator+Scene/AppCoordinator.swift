@@ -24,17 +24,21 @@ final class AppCoordinator: SceneCoordinatorType, HasDisposeBag {
     }
     
     @discardableResult
-    func transition(to scene: Navigationable, type: SceneTransitionType) -> Completable {
+    func transition(to scene: Navigationable? = nil, type: SceneTransitionType) -> Completable {
         var subject = PublishSubject<Void>()
-        let viewController = scene.viewController()
+        let viewController = scene?.viewController()
         
         switch type {
         case .root:
+            guard let viewController = viewController else { fatalError("ViewController is required") }
+
             currentViewController = AppCoordinator.actualViewController(for: viewController)
             window.rootViewController = viewController
             subject.onCompleted()
             
         case .push(let animated):
+            guard let viewController = viewController else { fatalError("ViewController is required") }
+
             guard let navigationController = currentViewController?.navigationController else {
                 fatalError("Can't push a view controller without a current navigation controller")
             }
@@ -45,9 +49,19 @@ final class AppCoordinator: SceneCoordinatorType, HasDisposeBag {
                 .bind(to: subject)
                 .disposed(by: disposeBag)
             navigationController.pushViewController(viewController, animated: animated)
+
+            let backButton = UIButton(type: .system)
+            backButton.addTarget(self, action: #selector(popAction), for: .touchUpInside)
+            backButton.setTitle(currentViewController?.navigationItem.title, for: .normal)
+            backButton.setImage(R.image.backButton(), for: .normal)
+            let barBackButton = UIBarButtonItem(customView: backButton)
+            viewController.navigationItem.leftBarButtonItem = barBackButton
+
             currentViewController = AppCoordinator.actualViewController(for: viewController)
             
         case .modal(let animated):
+            guard let viewController = viewController else { fatalError("ViewController is required") }
+
             currentViewController?.present(viewController, animated: animated) {
                 subject.onCompleted()
             }
@@ -145,5 +159,12 @@ extension AppCoordinator {
             currentViewController = AppCoordinator.actualViewController(for: navigationController.viewControllers.last!)
         }
         return subject
+    }
+}
+
+extension AppCoordinator {
+    @objc
+    func popAction() {
+        self.transition(type: .pop(animated: true, level: .parent))
     }
 }

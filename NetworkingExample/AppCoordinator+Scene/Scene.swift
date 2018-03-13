@@ -24,6 +24,4 @@ protocol SceneType: Navigationable {
     associatedtype ViewModelType
     
     var viewModel: ViewModelType { get set }
-    
-    func viewController() -> UIViewController
 }

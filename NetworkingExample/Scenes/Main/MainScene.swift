@@ -13,9 +13,11 @@ struct MainScene: SceneType, InstantiatableFromNIB {
         guard let viewController = UINib.init(nibName: "Main", bundle: nil).instantiate(withOwner: nil, options: nil).first as? MainViewController else {
             fatalError("Unable to instantiate a view controller")
         }
-        
+
+        let navigationController = UINavigationController(rootViewController: viewController)
+        viewController.title = "Articles"
         viewController.bindViewModel(to: self.viewModel)
         
-        return viewController
+        return navigationController
     }
 }
