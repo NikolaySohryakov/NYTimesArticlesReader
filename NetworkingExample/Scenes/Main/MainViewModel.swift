@@ -13,6 +13,7 @@ protocol MainViewModelInputsType {
     // Mainly `PublishSubject` here
     var refresh: PublishSubject<Void> { get }
     var loadNextPage: PublishSubject<Void> { get }
+    var updateForSearchText: PublishSubject<String?> { get }
 }
 
 protocol MainViewModelOutputsType {
@@ -43,6 +44,7 @@ class MainViewModel: MainViewModelType {
     // MARK: Inputs
     private(set) var refresh: PublishSubject<Void>
     private(set) var loadNextPage: PublishSubject<Void>
+    private(set) var updateForSearchText: PublishSubject<String?>
 
     // MARK: Outputs
     private(set) var data: Observable<[ArticleType]>
@@ -52,19 +54,23 @@ class MainViewModel: MainViewModelType {
     private var nextPage: Int = 0
     private var loadingInProgress: Bool = false
     private var shouldLoadNextPage: Bool = true //TODO: support this
+    private var searchText: BehaviorSubject<String?>
 
     init(coordinator: SceneCoordinatorType, service: ArticlesSearchServiceType) {
         // Setup
         self.coordinator = coordinator
         self.service = service
         self.data = Observable.just([])
+        self.searchText = BehaviorSubject<String?>(value: "")
 
         // Inputs
         refresh = PublishSubject<Void>()
         loadNextPage = PublishSubject<Void>()
+        updateForSearchText = PublishSubject<String?>()
 
         // ViewModel Life Cycle
-        let initialRefreshTrigger = Observable<Void>.just(())
+        updateForSearchText.subscribe(searchText).disposed(by: disposeBag)
+
         let loadFirstPageTrigger =
                 refresh.flatMapLatest { _ -> Observable<Void> in
                     self.nextPage = 0
@@ -76,20 +82,29 @@ class MainViewModel: MainViewModelType {
                     self.nextPage += 1
                     return Observable.just(())
                 }
+        let searchTextChangedTrigger = searchText
+                .distinctUntilChanged { lhs, rhs in
+                    return lhs == rhs
+                }
+                .filter { ($0?.count ?? 0) > 2 } //perform search only if the search phrase is more than 2 symbols
+                .debounce(0.5, scheduler: MainScheduler.instance)
+                .map { _ in () }
+                .skip(1)
 
         let articles =
                 Observable
-                .of(initialRefreshTrigger, loadFirstPageTrigger, loadNextPageTrigger)
+                .of(loadFirstPageTrigger, loadNextPageTrigger, searchTextChangedTrigger)
                 .merge()
                 .flatMap { () -> Single<([ArticleType], Int)> in
+                    let searchText = try self.searchText.value()
+
                     self.loadingInProgress = true
-                    return service.observeAllArticles(page: self.nextPage)
+                    return service.observeArticles(page: self.nextPage, searchText:searchText)
                 }
-                .share(replay: 1)
+                .share()
 
 
-        articles
-                .subscribe(onNext: {[unowned self] tuple in
+        articles.subscribe(onNext: {[unowned self] tuple in
                     self.loadingInProgress = false
                     self.hits = tuple.1
                 })

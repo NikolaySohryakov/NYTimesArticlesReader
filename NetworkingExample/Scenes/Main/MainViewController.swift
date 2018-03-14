@@ -15,13 +15,21 @@ extension UIScrollView {
 class MainViewController: UIViewController, BindableType {
     @IBOutlet weak var tableView: UITableView!
     lazy var refreshControl: UIRefreshControl = { UIRefreshControl() }()
+
+    var searchViewController: UISearchController!
     
     var viewModel: MainViewModel!
 
     override func viewDidLoad() {
         tableView.refreshControl = refreshControl
-
         tableView.register(ArticleCell.nib, forCellReuseIdentifier: ArticleCell.reuseIdentifier)
+
+        searchViewController = UISearchController(searchResultsController: nil)
+        searchViewController.searchResultsUpdater = self
+        searchViewController.obscuresBackgroundDuringPresentation = false
+        searchViewController.searchBar.placeholder = "Type something..."
+        navigationItem.searchController = searchViewController
+        definesPresentationContext = true
     }
 
     func bindViewModel() {
@@ -30,16 +38,18 @@ class MainViewController: UIViewController, BindableType {
                 .map { _ in self.refreshControl.isRefreshing }
                 .filter { $0 == true }
                 .subscribe({_ in
-                    self.viewModel.refresh.onNext(())
+                    self.viewModel.inputs.refresh.onNext(())
                 })
                 .disposed(by: rx.disposeBag)
 
-        viewModel.data
+        viewModel.outputs
+                .data
                 .map {_ in false}
                 .bind(to:refreshControl.rx.isRefreshing)
                 .disposed(by: rx.disposeBag)
 
-        viewModel.data
+        viewModel.outputs
+                .data
                 .bind(to: tableView.rx.items(cellIdentifier: ArticleCell.reuseIdentifier, cellType: ArticleCell.self)) { (row: Int, element: ArticleType, cell: ArticleCell) in
                     cell.headLineLabel.text = element.headline
                     cell.snippetLabel.text = element.snippet
@@ -54,14 +64,14 @@ class MainViewController: UIViewController, BindableType {
                             : Signal.empty()
                 }
                 .subscribe(onNext: {
-                    self.viewModel.loadNextPage.onNext(())
+                    self.viewModel.inputs.loadNextPage.onNext(())
                 })
                 .disposed(by: rx.disposeBag)
 
         tableView.rx
                 .modelSelected(Article.self)
                 .subscribe(onNext: { article in
-                    self.viewModel.showArticle.execute(article)
+                    self.viewModel.actions.showArticle.execute(article)
                 })
                 .disposed(by: rx.disposeBag)
 
@@ -72,5 +82,11 @@ class MainViewController: UIViewController, BindableType {
 extension MainViewController: UITableViewDelegate {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         tableView.deselectRow(at: indexPath, animated: true)
+    }
+}
+
+extension MainViewController: UISearchResultsUpdating {
+    func updateSearchResults(for searchController: UISearchController) {
+        viewModel.inputs.updateForSearchText.onNext(searchViewController.searchBar.text)
     }
 }

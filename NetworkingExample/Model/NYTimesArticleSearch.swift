@@ -6,7 +6,7 @@ import Foundation
 import Moya
 
 enum NYTimesArticleSearch {
-    case articleSearch(Int)
+    case articleSearch(Int, String?)
 }
 
 extension NYTimesArticleSearch: TargetType {
@@ -35,8 +35,11 @@ extension NYTimesArticleSearch: TargetType {
 
     var task: Task {
         switch self {
-        case .articleSearch(let page):
-            let params = ["page":page]
+        case .articleSearch(let page, let searchText):
+            var params: [String : Any] = ["page": page]
+            if let searchText = searchText, searchText.count > 0 {
+                params["q"] = searchText
+            }
             return .requestParameters(parameters: params, encoding: URLEncoding.default)
         }
     }
